@@ -17,12 +17,12 @@ fill(p1, p2, transp = 60, color = leadLine1 > leadLine2 ? #53b987 : #eb4d5c)
 // Initial inputs
 Act_RSI_VWAP_long = input(true, "RSI VOLUME WEIGHTED AVERAGE PRICE LONG")
 RSI_VWAP_length_long = input(20, "RSI-VWAP LENGTH LONG")
-RSI_VWAP_overSold_long = input(19, "RSI-VWAP OVERSOLD LONG", type=input.float)
+RSI_VWAP_overSold_long = input(18, "RSI-VWAP OVERSOLD LONG", type=input.float)
 RSI_VWAP_overBought_long = input(87, "RSI-VWAP OVERBOUGHT LONG", type=input.float)
 
 Act_RSI_VWAP_short = input(true, "RSI VOLUME WEIGHTED AVERAGE PRICE SHORT")
 RSI_VWAP_length_short = input(19, "RSI-VWAP LENGTH SHORT")
-RSI_VWAP_overSold_short = input(11, "RSI-VWAP OVERSOLD SHORT", type=input.float)
+RSI_VWAP_overSold_short = input(12, "RSI-VWAP OVERSOLD SHORT", type=input.float)
 RSI_VWAP_overBought_short = input(64, "RSI-VWAP OVERBOUGHT SHORT", type=input.float)
 
 // RSI with VWAP as source
@@ -48,7 +48,7 @@ RSI_VWAP_short = rsi(vwap(close), RSI_VWAP_length_short)
 ///////  STRATEGY Take Profit / Stop Loss ////////
 ////// LONG //////
 long_tp_inp = input(100, title='Long Take Profit %', step=0.1)/100
-long_sl_inp = input(3.6, title='Long Stop Loss %', step=0.1)/100
+long_sl_inp = input(2.3, title='Long Stop Loss %', step=0.1)/100
 long_trailing = input(100, title='Trailing Stop Long', step=0.1) / 100
 
 long_take_level = strategy.position_avg_price * (1 + long_tp_inp)
